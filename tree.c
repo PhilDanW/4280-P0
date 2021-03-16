@@ -48,7 +48,7 @@ void traverseInorder(int lvl, TreeNode *root, FILE * fout)
         for (i = 0; i < lvl; i++){
             fprintf(fout, "\t");
         }
-        listPrint(root->head, fout)
+        listPrint(root->head, fout);
         traverseInorder(lvl + 1, root->right, fout);
     }
 }
