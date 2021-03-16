@@ -6,26 +6,25 @@
 
 int main(int argc, char *argv[]){
 	
-	// make sure there are only zero or one arguments 
+	// make sure the right number of arguments are given
 	if (argc > 2) {
 		errno = 8;
 		perror("Error: Too many arguments, run the program P0 with either zero or 1 argument");
 		return 1;
 	}
-	// allocating buffer and strings to handle input fromt the file pointer
+	// allocate buffer and strings to handle input from the file
 	char buffer[20];
 	char *infile;
 	char *outPre;
 	char *outInord;
 	char *outPost;
 
-	// initiallizing the Tree pointer as well as input and output file pointers
+	// initiallize the Tree pointer as well as input and output file pointers
 	TreeNode * root = NULL;
 	FILE * fp = stdin;
 	FILE * foutPreorder;
 	FILE * foutInorder;
 	FILE * foutPostorder;
-
 	char first;
 
 	if (argc == 2){
@@ -35,8 +34,6 @@ int main(int argc, char *argv[]){
 		strcpy(infile, argv[1]);
 		strcat(infile, ".sp2020");
 		fp = fopen(infile, "r");
-
-
 
 		// each output file is set up with a different name based on whether it's pre, in, or post order
 		outPre = malloc(strlen(argv[1]) + strlen(".preorder") + 1);
@@ -50,8 +47,6 @@ int main(int argc, char *argv[]){
 		outPost = malloc(strlen(argv[1]) + strlen(".postorder") + 1);
 		strcpy(outPost, argv[1]);
 		strcat(outPost, ".postorder");
-
-
 	} else {
 		
 		// in the event that input is from stdin, output files are named differently
@@ -62,18 +57,13 @@ int main(int argc, char *argv[]){
 		strcpy(outPre, "out.preorder");
 		strcpy(outInord, "out.inorder");
 		strcpy(outPost, "out.postorder");
-
-
 	}
-
-
+	
 	// gets input from input pointer and feeds one string-token at a time and its length to build a tree
 	while (fscanf(fp, "%s", buffer) != EOF) {
 		first = buffer[0];
 		root = buildTree(root, first, buffer);
-
 	}
-
 
 	// a tree was made
 	if (root != NULL){
@@ -98,11 +88,9 @@ int main(int argc, char *argv[]){
 		errno = 2;
 		perror("Error: Input could not be used. No usable file was found!");
 		return 1;
-
 	}
 
 	// close the input file
 	fclose(fp);
-	
 	return 0;
 }
