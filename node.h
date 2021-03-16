@@ -1,3 +1,6 @@
+#ifndef NODE
+#define NODE
+
 #include <stdbool.h>
 
 //structure for a node in the linked list containing the strings within the bst
@@ -19,3 +22,5 @@ bool listSearch(Node *head, char *str);
 
 // prints the linked list in order from latest to oldest
 void listPrint(Node *head, FILE * fout);
+
+#endif
