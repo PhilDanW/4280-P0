@@ -1,3 +1,6 @@
+//Philip Wright
+//CMP 4280 P0
+//this file lays out the node structure as well as the function prototypes
 #ifndef NODE
 #define NODE
 
