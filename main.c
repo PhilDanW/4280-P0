@@ -1,3 +1,7 @@
+//Philip Wright
+//CMP 4280 P0
+//this is the main function of the program that takes in the command line argument of the file
+//this file pointer is then read and passed to the 3 tree traversal algorithms
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
