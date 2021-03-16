@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
 		// concatenates the strings of the first passed argument and extension ".fs182"
 		infile = malloc(strlen(argv[1]) + strlen(".fs182") + 1);
 		strcpy(infile, argv[1]);
-		strcat(infile, ".fs182");
+		strcat(infile, ".sp2020");
 		fp = fopen(infile, "r");
 
 
