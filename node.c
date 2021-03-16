@@ -1,3 +1,6 @@
+//Philip Wright
+//CMP 4280 P0
+//this file contains the helper functions for the nodes of the tree
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
